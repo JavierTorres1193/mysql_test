@@ -10,8 +10,8 @@ Este proyecto contiene la solución a la prueba técnica utilizando **MySQL** y 
 
 1. **Clona este repositorio:**
    ```sh
-   git clone https://github.com/tuusuario/prueba-tecnica-mysql.git
-   cd prueba-tecnica-mysql
+   git clone https://github.com/JavierTorres1193/mysql_test.git
+   cd mysql_test
    ```
 
 2. **Levanta el contenedor de MySQL con Docker:**
@@ -21,7 +21,7 @@ Este proyecto contiene la solución a la prueba técnica utilizando **MySQL** y 
 
 3. **Conéctate a la base de datos:**
    ```sh
-   mysql -h 127.0.0.1 -P 3306 -u user -ppassword testdb
+   mysql -h 127.0.0.1 -P 3306 -u user -p password testdb
    ```
 
 4. **Ejecuta las consultas desde `queries.sql` en MySQL.**
