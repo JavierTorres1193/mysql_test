@@ -1,12 +1,15 @@
 # Prueba Técnica - MySQL
 
-Este proyecto contiene la solución a la prueba técnica utilizando **MySQL** y **Docker**.
+Este proyecto proporciona una solución utilizando **MySQL** y **Docker** para levantar una base de datos de manera sencilla y rápida.
 
 ## 📌 Requisitos previos
 
-- Tener **Docker** y **Docker Compose** instalados en tu máquina.
+Antes de comenzar, asegúrate de tener instalado:
+- **Docker** y **Docker Compose** en tu sistema.
 
 ## 🚀 Cómo ejecutar la base de datos
+
+Sigue estos pasos para levantar el entorno de MySQL:
 
 1. **Clona este repositorio:**
    ```sh
@@ -14,30 +17,34 @@ Este proyecto contiene la solución a la prueba técnica utilizando **MySQL** y 
    cd mysql_test
    ```
 
-2. **Levanta el contenedor de MySQL con Docker:**
+2. **Inicia los contenedores con Docker Compose:**
    ```sh
    docker-compose up -d
    ```
+   Esto iniciará un contenedor con **MySQL** y otro con **Adminer** para la administración visual de la base de datos.
 
-3. **Conéctate a la base de datos:**
-   ```sh
-   mysql -h 127.0.0.1 -P 3306 -u user -p password testdb
-   ```
+3. **Opcional: Usar Adminer para gestionar la base de datos**
+   - Abre tu navegador y accede a: [http://localhost:8080](http://localhost:8080)
+   - Ingresa las siguientes credenciales:
+     - **Servidor:** `mysql`
+     - **Usuario:** `user`
+     - **Contraseña:** `password`
+     - **Base de datos:** `testdb`
 
 4. **Ejecuta las consultas desde `queries.sql` en MySQL.**
 
-## 📌 Contenido
+## 📂 Contenido del repositorio
 
-- `database.sql`: Script SQL con la estructura de la base de datos y datos de prueba.
-- `queries.sql`: Consultas SQL organizadas y comentadas.
-- `docker-compose.yml`: Archivo para levantar MySQL en un contenedor Docker.
-- `README.md`: Instrucciones para ejecutar el proyecto.
+- `database.sql` → Script SQL con la estructura y datos de prueba.
+- `queries.sql` → Conjunto de consultas SQL organizadas.
+- `docker-compose.yml` → Archivo de configuración para Docker.
+- `README.md` → Documentación del proyecto.
 
 ## 🛠 Configuración de Docker
 
-Este proyecto utiliza **Docker** para levantar un entorno de base de datos MySQL automáticamente.
+Este proyecto utiliza **Docker Compose** para configurar un entorno con **MySQL 8** y **Adminer**.
 
-📌 **Contenido de `docker-compose.yml`:**
+📌 **Estructura del `docker-compose.yml`:**
 
 ```yaml
 version: '3.8'
@@ -63,15 +70,15 @@ services:
     restart: always
     ports:
       - "8080:8080"
-
 ```
 
 ### 🔹 **¿Qué hace este archivo?**
-✅ Descarga la imagen oficial de **MySQL 8**  
-✅ Crea la base de datos `testdb` con usuario y contraseña  
-✅ Ejecuta el script `database.sql` automáticamente  
+✅ Descarga la imagen oficial de **MySQL 8** y **Adminer**
+✅ Crea la base de datos `testdb` con usuario y contraseña predefinidos
+✅ Ejecuta el script `database.sql` al iniciar el contenedor
+✅ Proporciona una interfaz web en [http://localhost:8080](http://localhost:8080)
 
-## 📌 Consultas SQL
+## 📌 Consultas SQL disponibles
 
 📌 **Ejemplo de consultas en `queries.sql`:**
 
@@ -86,7 +93,4 @@ SELECT COUNT(*) AS cantidad_registros
 FROM products
 WHERE supplier_id = 1 AND DATE(updated_at) = CURDATE();
 ```
-
-## 📩 Contacto
-Si tienes dudas, puedes contactarme en [tu correo o LinkedIn].
 
