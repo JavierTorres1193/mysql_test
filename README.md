@@ -56,6 +56,14 @@ services:
       - "3306:3306"
     volumes:
       - ./database.sql:/docker-entrypoint-initdb.d/database.sql
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - "8080:8080"
+
 ```
 
 ### 🔹 **¿Qué hace este archivo?**
