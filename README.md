@@ -6,6 +6,7 @@ Este proyecto proporciona una solución utilizando **MySQL** y **Docker** para l
 
 Antes de comenzar, asegúrate de tener instalado:
 - **Docker** y **Docker Compose** en tu sistema.
+- Asegurarse de que los puertos **3306** (MySQL) y **8080** (Adminer) estén libres antes de ejecutar los contenedores.
 
 ## 🚀 Cómo ejecutar la base de datos
 
